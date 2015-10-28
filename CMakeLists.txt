@@ -6,6 +6,7 @@ project(my_interesting_moves)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  trajectory_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -110,9 +111,9 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-# include_directories(include)
+include_directories(include)
 include_directories(
-  ${catkin_INCLUDE_DIRS}
+    ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -126,16 +127,13 @@ include_directories(
 # add_dependencies(my_interesting_moves ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(my_interesting_moves_node src/my_interesting_moves_node.cpp)
+#add_executable(interesting_moves src/interesting_moves.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(my_interesting_moves_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(my_interesting_moves_node
-#   ${catkin_LIBRARIES}
-# )
 
 #############
 ## Install ##
