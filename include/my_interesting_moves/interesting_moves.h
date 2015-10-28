@@ -1,6 +1,8 @@
 #ifndef INTERESTING_MOVES_H
 #define INTERESTING_MOVES_H
 
+#include <ros/ros.h>
+#include <trajectory_msgs/JointTrajectory.h>
 class InterestingMoves {
 public:
         InterestingMoves();
