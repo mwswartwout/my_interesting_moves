@@ -7,11 +7,14 @@ project(my_interesting_moves)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   trajectory_msgs
+  baxter_traj_streamer
+  actionlib
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
+find_package(cmake_modules REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -99,10 +102,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES my_interesting_moves
-#  CATKIN_DEPENDS roscpp
-#  DEPENDS system_lib
+    INCLUDE_DIRS include
+    LIBRARIES my_interesting_moves
+    CATKIN_DEPENDS roscpp trajectory_msgs baxter_traj_streamer actionlib
+    DEPENDS system_lib cmake_modules Eigen3
 )
 
 ###########
@@ -112,14 +115,15 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(include)
-include_directories(
-    ${catkin_INCLUDE_DIRS}
-)
+include_directories(${catkin_INCLUDE_DIRS})
+include_directories(${EIGEN3_INCLUDE_DIR})
+add_definitions(${EIGEN_DEFINITIONS})
 
 ## Declare a C++ library
 # add_library(my_interesting_moves
 #   src/${PROJECT_NAME}/my_interesting_moves.cpp
 # )
+add_library(my_interesting_moves src/interesting_moves.cpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -134,6 +138,7 @@ include_directories(
 # add_dependencies(my_interesting_moves_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
+#target_link_libraries(interesting_moves ${catkin_LIBRARIES})
 
 #############
 ## Install ##
