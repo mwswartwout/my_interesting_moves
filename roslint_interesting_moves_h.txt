@@ -1,0 +1,6 @@
+include/my_interesting_moves/interesting_moves.h:26:  Is this a non-const reference? If so, make const or use a pointer: trajectory_msgs::JointTrajectory &des_trajectory  [runtime/references] [2]
+include/my_interesting_moves/interesting_moves.h:32:  Is this a non-const reference? If so, make const or use a pointer: trajectory_msgs::JointTrajectory &des_trajectory  [runtime/references] [2]
+include/my_interesting_moves/interesting_moves.h:38:  Is this a non-const reference? If so, make const or use a pointer: trajectory_msgs::JointTrajectory &des_trajectory  [runtime/references] [2]
+include/my_interesting_moves/interesting_moves.h:44:  Is this a non-const reference? If so, make const or use a pointer: trajectory_msgs::JointTrajectory &des_trajectory  [runtime/references] [2]
+Done processing include/my_interesting_moves/interesting_moves.h
+Total errors found: 4
