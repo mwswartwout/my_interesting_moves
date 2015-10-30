@@ -105,7 +105,7 @@ catkin_package(
     INCLUDE_DIRS include
     LIBRARIES my_interesting_moves
     CATKIN_DEPENDS roscpp trajectory_msgs baxter_traj_streamer actionlib
-    DEPENDS system_lib cmake_modules Eigen3
+    DEPENDS system_lib Eigen3
 )
 
 ###########
